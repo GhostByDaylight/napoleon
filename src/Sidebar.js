@@ -22,7 +22,7 @@ function SidebarIcon({icon, text, link}) {
         
         <a href={link}>{icon}</a>
         <span class="sidebar-tooltip group-hover:scale-100">
-            <a href={link}>{text}</a>
+            {text}
         </span>
     </div>);
 }
