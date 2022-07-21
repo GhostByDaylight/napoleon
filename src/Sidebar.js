@@ -1,16 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaTwitterSquare, FaFacebookSquare, FaBuffer } from "react-icons/fa";
+import { TiWeatherPartlySunny } from "react-icons/ti";
+import { MdMarkEmailUnread, MdOutlineSportsSoccer } from "react-icons/md"
+import { GiNewspaper } from "react-icons/gi"; 
 
 export default function() {
 return (
     <div className="fixed top-0 h-screen w-16 left-0 m-0 flex flex-col bg-[#FD5000] hover:text-white duration-1000">
 
-        <i><SidebarIcon icon={<FaLinkedin size="28" />} text={"LinkedIn"} link={"https://www.linkedin.com/in/benjamin-rybarczyk-397515237/"}/></i>
-        <i><SidebarIcon icon={<FaGithub size="28" />} text={"Github"} link={"https://github.com/GhostByDaylight"}/></i>
-        <i><SidebarIcon icon={<FaTwitterSquare size="28" />} text={"Twitter"} link={"https://twitter.com/home"}/></i>
-        <i><SidebarIcon icon={<FaFacebookSquare size="28" />} text={"Facebook"} link={"https://www.facebook.com/"}/></i>
-        <i><SidebarIcon icon={<FaBuffer size="28" />} text={"Website"} link={"http://bjrybar.000webhostapp.com/"}/></i>
+        <i><SidebarIcon icon={<TiWeatherPartlySunny size="28" />} text={"Weather"} link={"/weather"}/></i>
+        <i><SidebarIcon icon={<GiNewspaper size="28" />} text={"News around me"} link={"/news"}/></i>
+        <i><SidebarIcon icon={<MdMarkEmailUnread size="28" />} text={"New Emails"} link={"/emails"}/></i>
+        <i><SidebarIcon icon={<MdOutlineSportsSoccer size="28" />} text={"Soccer"} link={"/soccer"}/></i>
+        
 
     </div>
 );
