@@ -19,11 +19,13 @@ return (
 }
 
 function SidebarIcon({icon, text, link}) {
-    return (<div className="sidebar-icon group" >
+    return (
+    <div className="sidebar-icon group" >
         
         <a href={link}>{icon}</a>
         <span class="sidebar-tooltip group-hover:scale-100">
             {text}
         </span>
-    </div>);
+    </div>
+    );
 }

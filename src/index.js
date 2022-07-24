@@ -5,11 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Sidebar from './Sidebar';
 import Split from './Split';
+import Weather from './Weather';
+import News from './News'
+import Soccer from './Soccer';
+import Emails from './Emails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Split />
+    
+    <Weather />
+    <News />
+    <Emails />
+    <Soccer />
     <App />
   </React.StrictMode>
 );
