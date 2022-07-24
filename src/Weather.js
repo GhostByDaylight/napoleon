@@ -1,6 +1,6 @@
 import React from 'react'
 
-var key = '4763766bfee040fe939163516222107';
+var key = '';
 var baseURL = 'https://api.weatherapi.com/v1/';
 var location = 'Toledo';
 var airQualityData = 'no';
