@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 
 
-var key = '';
+
+var key = process.env.REACT_APP_API_KEY;
 var baseURL = 'https://api.weatherapi.com/v1/';
 var location = 'Toledo';
 var airQualityData = 'no';
