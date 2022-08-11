@@ -23,7 +23,7 @@ export default function Weather() {
   const [condition, setCondition] = useState()
   const [icon, setIcon] = useState();
   const [updateTime, setUpdateTime] = useState()
-  const [open, setOpen] = useState(false);
+  const [label, setLabel] = useState('Pick a location');
   
 
   fetch(request)
@@ -37,17 +37,18 @@ export default function Weather() {
     });
   
   return (
-    <div className="split topleft ">Weather
+    <div className="split topleft ">
     
     The current temperature is {temp}
     <p>The current condition is {condition}</p>
       <p className='bg-green-500 hover:bg-slate-500 duration-1000'>The current icon is <img src={icon}></img></p>
       <p>This webpage was last updated at {updateTime}</p>
 
-      <Dropdown label='Pick a location'>
-        <DropdownItem option='Toledo'> </DropdownItem>
-        <DropdownItem option='Bowling Green'> </DropdownItem>
-        <DropdownItem option='Boob World'> </DropdownItem>
+      <Dropdown label={label}>
+        <DropdownItem option='Pick a Location' setLabel={setLabel}> </DropdownItem>
+        <DropdownItem option='Toledo' setLabel={setLabel}> </DropdownItem>
+        <DropdownItem option='Bowling Green' setLabel={setLabel}> </DropdownItem>
+        <DropdownItem option='Boob World' setLabel={setLabel}> </DropdownItem>
       </Dropdown>
       
       
