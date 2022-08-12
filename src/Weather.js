@@ -24,12 +24,11 @@ export default function Weather() {
   const [icon, setIcon] = useState();
   const [updateTime, setUpdateTime] = useState()
   const [label, setLabel] = useState('Pick a Location');
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
 
 
-  useEffect(() => {
-    setOpen(!open)
-  }, []);
+  
+  
   
 
   fetch(request)
@@ -62,4 +61,5 @@ export default function Weather() {
       </div>
     
   )
+  
 }
