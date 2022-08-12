@@ -1,13 +1,16 @@
-import {React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 
 export default function Dropdown( props ) {
   
-  const [open, setOpen] = useState(false)
+  useEffect(() => {
+    props.setOpen(!props.isOpen)
+  }, [props.label]);
+  
   
   return (
     <div>
-        <label onClick={() => setOpen(!open)} className=' cursor-pointer'>  {props.label}  </label>
-        { open && props.children }
+        <label onClick={() => props.setOpen(!props.isOpen)} className=' cursor-pointer'>  {props.label}  </label>
+        { props.isOpen && props.children }
         </div>
   )
 }
