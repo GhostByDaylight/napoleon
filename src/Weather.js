@@ -3,21 +3,11 @@ import Dropdown from './Dropdown'
 import DropdownItem from './DropdownItem'
 
 
-
-
-var key = process.env.REACT_APP_API_KEY;
-var baseURL = 'https://api.weatherapi.com/v1/';
-var location = 'Toledo';
-var airQualityData = 'no';
-
-var request = baseURL + "current.json?key=" + key + "&q=" + location + "&aqi=" + airQualityData;
-
-
-
-
-
-
 export default function Weather() {
+  
+  
+  
+  
   
   const [temp, setTemp] = useState();
   const [condition, setCondition] = useState()
@@ -28,10 +18,32 @@ export default function Weather() {
 
 
   
-  
-  
 
-  fetch(request)
+
+  var key = process.env.REACT_APP_API_KEY;
+  var baseURL = 'https://api.weatherapi.com/v1/';
+  //var location = {label};
+  var airQualityData = 'no';
+
+  var url = baseURL + "current.json?key=" + key + "&q=" + label + "&aqi=" + airQualityData;
+  
+  
+  useEffect((url) => {
+    if (label === "Pick a Location") {
+      
+    }
+    else {
+      request(url)
+    }
+  }, [label]);
+
+
+  function getLocationData(location) {
+
+  }
+
+  function request(url) {
+  fetch(url)
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
@@ -40,14 +52,20 @@ export default function Weather() {
       setIcon(data.current.condition.icon);
       setUpdateTime(data.current.last_updated);
     });
+  }
   
+request(url);
+
   return (
     <div className="split topleft ">
     
-    The current temperature is {temp}
+      <p>The current location is {label} </p>
+    <p>The current temperature is {temp} </p>
     <p>The current condition is {condition}</p>
       <p className='bg-green-500 hover:bg-slate-500 duration-1000'>The current icon is <img src={icon} alt=""></img></p>
       <p>This webpage was last updated at {updateTime}</p>
+
+      
 
       <Dropdown label={label} setLabel={setLabel} setOpen={setOpen} isOpen={open}>
         <DropdownItem option='Pick a Location' setLabel={setLabel} > </DropdownItem>
