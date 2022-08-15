@@ -19,7 +19,7 @@ export default function Weather() {
 
   
 
-
+  
   var key = process.env.REACT_APP_API_KEY;
   var baseURL = 'https://api.weatherapi.com/v1/';
   //var location = {label};
@@ -29,18 +29,11 @@ export default function Weather() {
   
   
   useEffect((url) => {
-    if (label === "Pick a Location") {
-      
-    }
-    else {
-      request(url)
-    }
+    request(url)
   }, [label]);
 
 
-  function getLocationData(location) {
-
-  }
+  
 
   function request(url) {
   fetch(url)
@@ -57,7 +50,18 @@ export default function Weather() {
 request(url);
 
   return (
-    <div className="split topleft ">
+
+    
+    <div className="split topleft">
+
+      <div className=' text-left font-mono'>
+        <Dropdown label={label} setLabel={setLabel} setOpen={setOpen} isOpen={open}>
+          <DropdownItem option='Pick a Location' setLabel={setLabel} > </DropdownItem>
+          <DropdownItem option='Toledo, OH' setLabel={setLabel} > </DropdownItem>
+          <DropdownItem option='Bowling Green, OH' setLabel={setLabel} > </DropdownItem>
+          <DropdownItem option='Mobile, AL' setLabel={setLabel} > </DropdownItem>
+        </Dropdown>
+      </div>
     
       <p>The current location is {label} </p>
     <p>The current temperature is {temp} </p>
@@ -66,13 +70,7 @@ request(url);
       <p>This webpage was last updated at {updateTime}</p>
 
       
-
-      <Dropdown label={label} setLabel={setLabel} setOpen={setOpen} isOpen={open}>
-        <DropdownItem option='Pick a Location' setLabel={setLabel} > </DropdownItem>
-        <DropdownItem option='Toledo' setLabel={setLabel} > </DropdownItem>
-        <DropdownItem option='Bowling Green' setLabel={setLabel} > </DropdownItem>
-        <DropdownItem option='Boob World' setLabel={setLabel} > </DropdownItem>
-      </Dropdown>
+    
       
       
       

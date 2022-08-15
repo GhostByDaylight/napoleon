@@ -9,7 +9,7 @@ export default function Dropdown( props ) {
   
   return (
     <div>
-        <label onClick={() => props.setOpen(!props.isOpen)} className=' cursor-pointer'>  {props.label}  </label>
+        <label onClick={() => props.setOpen(!props.isOpen)} className=' cursor-pointer bg-slate-200'>  {props.label}  </label>
         { props.isOpen && props.children }
         </div>
   )
