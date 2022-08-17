@@ -28,8 +28,11 @@ export default function Weather() {
   var url = baseURL + "current.json?key=" + key + "&q=" + label + "&aqi=" + airQualityData;
   
   
-  useEffect((url) => {
-    request(url)
+  useEffect(() => {
+    if (label === "Pick a Location")
+      return
+    else
+      request(url)
   }, [label]);
 
 
@@ -47,27 +50,34 @@ export default function Weather() {
     });
   }
   
-request(url);
+
+
+  const myStyle = {
+    backgroundImage: "url(" + icon + ")",
+    backgroundSize: "50%",
+    
+    
+  };
+  console.log(myStyle)
 
   return (
 
     
-    <div className="split topleft">
-
-      <div className=' text-left font-mono'>
+    <div className="split topleft bg-slate-200 text-center" style={myStyle}>
+       
+      <div className='font-mono' >
         <Dropdown label={label} setLabel={setLabel} setOpen={setOpen} isOpen={open}>
-          <DropdownItem option='Pick a Location' setLabel={setLabel} > </DropdownItem>
+          
           <DropdownItem option='Toledo, OH' setLabel={setLabel} > </DropdownItem>
           <DropdownItem option='Bowling Green, OH' setLabel={setLabel} > </DropdownItem>
-          <DropdownItem option='Mobile, AL' setLabel={setLabel} > </DropdownItem>
+          <DropdownItem option='Tokyo, Japan' setLabel={setLabel} > </DropdownItem>
         </Dropdown>
       </div>
     
-      <p>The current location is {label} </p>
+    <p>The current location is {label} </p>
     <p>The current temperature is {temp} </p>
     <p>The current condition is {condition}</p>
-      <p className='bg-green-500 hover:bg-slate-500 duration-1000'>The current icon is <img src={icon} alt=""></img></p>
-      <p>This webpage was last updated at {updateTime}</p>
+    <p>This webpage was last updated at {updateTime}</p>
 
       
     
