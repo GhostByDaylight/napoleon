@@ -5,8 +5,11 @@ something for myself instead of using something cookie-cutter like Bootstrap com
 understand basic react components. 
 
 This project utilizes 4 aspects of mine combined into 1 browser window. I'm using a split screen technique to divide
-the screen into my 4 aspects, Weather, Local news, New emails, and Soccer news. Currently I just have background colors
-as placeholders but I will soon implement these aspects into their respective regions.
+the screen into my 4 aspects, Weather, Local news, New emails, and Soccer news. The weather portion is the current section
+that I am working on.
+
+Currently, I am working on making a dropdown menu for each of the possible selectors of the weather API. I only have the
+location aspect working for now but I am in the middle of making a dropdown for Air Quality Data (AQD)
 
 
 ## Getting Started with Create React App
