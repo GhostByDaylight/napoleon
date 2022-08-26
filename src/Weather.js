@@ -70,7 +70,8 @@ export default function Weather() {
           
           <DropdownItem option='Toledo, OH' setLabel={setLabel} > </DropdownItem>
           <DropdownItem option='Bowling Green, OH' setLabel={setLabel} > </DropdownItem>
-          <DropdownItem option='Tokyo, Japan' setLabel={setLabel} > </DropdownItem>
+          <DropdownItem option='Mobile, AL' setLabel={setLabel} > </DropdownItem>
+          <DropdownItem option='Peck, MI' setLabel={setLabel} > </DropdownItem>
         </Dropdown>
       </div>
     
